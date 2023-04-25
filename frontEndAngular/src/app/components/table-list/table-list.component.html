@@ -1,0 +1,45 @@
+<div class="form-inline my-3 my-lg-1" style="justify-content: center;">
+          <select class="form-control mr-sm-2" name="atributo" (change)="onInputChange($event)">
+            <option value="*">-- Lista sin Filtro --</option>
+            <option value="ean">Código EAN</option>
+            <option value="nombre">Nombre</option>
+            <option value="marca">Marca</option>
+            <option value="descripcion">Descripcion</option>
+            <option value="unidades">Unidades</option>
+        </select>  
+      <input class="form-control mr-sm-2" name="valor" type="text" placeholder="Digite valor" aria-label="Search" (input)="onInputChange($event)">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="buscar()" >Buscar</button>
+    </div>
+<h1>Lista de Productos</h1>
+<table class="table table-hover table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Código EAN</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Unidades</th>
+       <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <th scope="row">1</th>
+      <td>{{product.codigoean}}</td>
+      <td>{{product.nombre}}</td>
+      <td>{{product.marca}}</td>
+      <td>{{product.descripcion}}</td>
+      <td>{{product.unidades}}</td>
+      <td>
+          
+          <div>
+            <button class="btn btn-primary" (click)="openModal(product.codigoean)">Ver Comentarios</button>
+            <button class="btn btn-tertiary" (click)="openModal(product.codigoean)">Ver imagen</button>
+            <button class="btn btn-secondary" (click)="openModal(product.codigoean)">Eliminar Registro</button>
+          </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

@@ -1,0 +1,36 @@
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">{{ title }} Codigo EAN {{ code }}</h5>
+  
+</div>
+<div class="modal-body">
+    <table class="table table-hover table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Comentario</th>
+      <th scope="col">Fecha Creación</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let comment of comments">
+      <th scope="row">1</th>
+      <td>{{comment.comentario}}</td>
+      <td>{{comment.fechaCreacion}}</td>
+    </tr>
+  </tbody>
+</table>
+<form [formGroup]="formg">
+<div >
+        <input type="text" id="comentario" name="comentario" class="form-control" formControlName="comentario" [(ngModel)]="formulario.comentario">
+</div>  
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+    Cerrar
+  </button>
+  <button type="button" class="btn btn-primary"  (click)="guardarComentario()">Guardar Comentario</button>
+
+</div>
+</form>  
+    
+</div>
+

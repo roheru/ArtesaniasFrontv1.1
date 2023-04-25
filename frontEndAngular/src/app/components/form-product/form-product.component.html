@@ -1,0 +1,43 @@
+<div>
+<form [formGroup]="formg">
+    <div class="form-group">
+        
+        <label>Código EAN</label>
+        <input   type="text" id="productcodigoean" class="form-control" formControlName="codigoean" 
+             [(ngModel)]="formulario.codigoean"   name="codigoean" >
+        
+    </div>
+    
+    <div class="form-group">
+        <label>Nombre Producto</label>
+        <input   type="text" id="productnombre" class="form-control" formControlName="nombre" 
+             [(ngModel)]="formulario.nombre"   name="nombre" >
+    </div>
+    
+    <div class="form-group">
+        <label>Marca Producto</label>
+        <input   type="text" id="productmarca" class="form-control" formControlName="marca" 
+             [(ngModel)]="formulario.marca"   name="marca" >
+    </div>
+    
+    <div class="form-group">
+        <label>Descripción Producto</label>
+        <input   type="text" id="productdescripcion" class="form-control" formControlName="descripcion" 
+             [(ngModel)]="formulario.descripcion"   name="descripcion" >
+    </div>
+    
+    <div class="form-group">
+        <label>Cantidades Disponibles</label>
+        <input   type="text" id="productcantidad" class="form-control" formControlName="cantidad" 
+             [(ngModel)]="formulario.cantidad"   name="cantidad" >
+    </div>
+    
+    <div class="form-group">
+        <label>Adjunte una imagen</label>
+        <input   type="file" id="imagenproducto" class="form-control" formControlName="file_data" 
+                 [(ngModel)]="formulario.file_data"   name="file_data" (change)="onFileSelect($event)" #fileUpload >
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="mifuncion()">Enviar</button>
+    
+</form>
+</div>
